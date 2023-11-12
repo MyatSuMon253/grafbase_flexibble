@@ -1,21 +1,21 @@
 import { NavLinks } from "@/constants";
-import { getCurrentUser } from "@/lib/session";
 import Image from "next/image";
 import Link from "next/link";
 import AuthProviders from "./AuthProviders";
 import ProfileMenu from "./ProfileMenu";
 
 const Navbar = async () => {
-  const session = await getCurrentUser();
-  // const session = {
-  //   user: {
-  //     id: "1",
-  //     name: "myat",
-  //     email: "myat@gmail.com",
-  //     avatarUrl:
-  //       "https://img.freepik.com/free-photo/pink-toy-doll_71767-111.jpg?size=626&ext=jpg&ga=GA1.2.2135065646.1695356914&semt=sph",
-  //   },
-  // };
+  // const session = await getCurrentUser();
+  const session = {
+    user: {
+      id: "1",
+      name: "myat",
+      email: "myat@gmail.com",
+      avatarUrl:
+        "https://img.freepik.com/free-photo/pink-toy-doll_71767-111.jpg?size=626&ext=jpg&ga=GA1.2.2135065646.1695356914&semt=sph",
+    },
+    expires: "2011-10-05T14:48:00.000Z",
+  };
 
   return (
     <nav className="flexBetween navbar">
@@ -35,7 +35,7 @@ const Navbar = async () => {
         {session?.user ? (
           <>
             <ProfileMenu session={session} />
-            <Link href="/create-projec">Share Work</Link>
+            <Link href="/create-project">Share Work</Link>
           </>
         ) : (
           <AuthProviders />

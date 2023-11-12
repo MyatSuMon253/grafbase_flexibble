@@ -20,7 +20,24 @@ const FormField = ({
       <label htmlFor="" className="w-full text-gray-100">
         {title}
       </label>
-      {isTextArea ? (<textarea placeholder={placeholder} className="form_field-input" onChange={(e)=> setState(e.target.value)} required>{state}</textarea>) : (<input type={type || 'text'} placeholder={placeholder} className="form_field-input" onChange={(e)=> setState(e.target.value)} required />)}
+      {isTextArea ? (
+        <textarea
+          placeholder={placeholder}
+          className="form_field-input"
+          onChange={(e) => setState(e.target.value)}
+          required
+        >
+          {state}
+        </textarea>
+      ) : (
+        <input
+          type={type || "text"}
+          placeholder={placeholder}
+          className="form_field-input"
+          onChange={(e) => setState(e.target.value)}
+          required
+        />
+      )}
     </div>
   );
 };

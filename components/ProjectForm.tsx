@@ -1,4 +1,5 @@
 "use client";
+
 import { SessionInterface } from "@/common.type";
 import { categoryFilters } from "@/constants";
 import Image from "next/image";
