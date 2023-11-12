@@ -21,36 +21,36 @@ const ProjectForm = ({ type, session }: Props) => {
 
     if (!file) return;
 
-    if (!file.type.includes('image')) {
-      return alert('Please upload an image file')
+    if (!file.type.includes("image")) {
+      return alert("Please upload an image file");
     }
 
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    
+
     reader.onload = () => {
       const result = reader.result as string;
-      handleStateChange('image', result)
-    }
+      handleStateChange("image", result);
+    };
   };
 
   const handleStateChange = (fieldName: string, value: string) => {
     setForm((prevState) => ({
       ...prevState,
-      [fieldName]: value
-    }))
+      [fieldName]: value,
+    }));
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [form, setForm] = useState({
-    title: '',
-    description: '',
-    image: '',
-    liveSiteUrl: '',
-    githubUrl: '',
-    category: ''
-  })
+    title: "",
+    description: "",
+    image: "",
+    liveSiteUrl: "",
+    githubUrl: "",
+    category: "",
+  });
 
   return (
     <form onSubmit={handleFormSubmit} className="flexStart form">
@@ -108,7 +108,12 @@ const ProjectForm = ({ type, session }: Props) => {
         setState={(value) => handleStateChange("category", value)}
       />
       <div className="flexStart w-full">
-        <Button title="create" type="submit" leftIcon={isSubmitting? "": '/plus.svg'} isSubmitting={isSubmitting} />
+        <Button
+          title="create"
+          type="submit"
+          leftIcon={isSubmitting ? "" : "/plus.svg"}
+          isSubmitting={isSubmitting}
+        />
       </div>
     </form>
   );

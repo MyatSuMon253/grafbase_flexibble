@@ -36,10 +36,6 @@ const AuthProviders = () => {
       </div>
     )
   }
-
-  return (
-    <div>AuthProviders</div>
-  )
 }
 
 export default AuthProviders
