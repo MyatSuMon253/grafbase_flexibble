@@ -14,7 +14,7 @@ const Navbar = async () => {
       avatarUrl:
         "https://img.freepik.com/free-photo/pink-toy-doll_71767-111.jpg?size=626&ext=jpg&ga=GA1.2.2135065646.1695356914&semt=sph",
     },
-    expires: "2011-10-05T14:48:00.000Z",
+    expires: "2024-12-05T14:48:00.000Z",
   };
 
   return (

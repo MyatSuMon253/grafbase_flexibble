@@ -14,7 +14,14 @@ type Props = {
 };
 
 const ProjectForm = ({ type, session }: Props) => {
-  const handleFormSubmit = (e: React.FormEvent) => {};
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      if (type === "create") {
+      }
+    } catch (error) {}
+  };
 
   const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -110,7 +117,11 @@ const ProjectForm = ({ type, session }: Props) => {
       />
       <div className="flexStart w-full">
         <Button
-          title="create"
+          title={
+            isSubmitting
+              ? `${type === "create" ? "Creating" : "Editing"}`
+              : `${type === "create" ? "Create" : "Edit"}`
+          }
           type="submit"
           leftIcon={isSubmitting ? "" : "/plus.svg"}
           isSubmitting={isSubmitting}

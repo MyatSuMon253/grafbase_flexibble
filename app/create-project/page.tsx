@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 const CreateProject = async () => {
   const session = await getCurrentUser();
 
-  if (!session?.user) redirect("/");
+  // if (!session?.user) redirect("/");
 
   return (
     <Modal>
